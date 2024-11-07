@@ -1,0 +1,31 @@
+Connect-AzureAD
+
+# Find the GroupID for the Assign Microsoft 365 Copilot group
+
+$CopilotGroupID = (Get-AzureADGroup -SearchString "Assign Microsoft 365 Copilot").ObjectID
+
+### NEED TO PASS THE EMAIL ADDRESS OF THE USER TO BE ADDED AND ASSIGN THIS TO THE $user VARIABLE ###
+$userEmail = ### PASSED IN USER EMAIL ADDRESS ###
+$userID = Get-AzureADUser -ObjectID $userEmail
+
+# Check to see if they are a part of BCBSRI or not. If they are not then we should cancel the request. 
+
+if($userID.CompanyName -eq "BCBSRI"){
+    Add-AzureADGroupMember -ObjectId $CopilotGroupID -RefObjectId $userId
+}
+else{
+    #Reject the request as not a member of BCBSRI
+}
+
+# Check to make sure it has worked
+start-sleep -seconds 60 #Wait for a minute for the group membership to update
+
+$AssignCopilotLicenseGroup = Get-AzureADGroup -SearchString "Assign Microsoft 365 Copilot"
+$CopilotGroupMembers = Get-AzureADGroupMember -ObjectID $AssignCopilotLicenseGroup.ObjectID -All $true
+$isCopilotGroupMember = $CopilotGroupMembers | Where-Object {$_.ObjectID -eq $userID.ObjectID}
+if($isCopilotGroupMember){
+    # Success
+}
+else{
+    # Failed
+}
