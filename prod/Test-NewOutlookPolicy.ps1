@@ -1,0 +1,129 @@
+Set-OwaMailboxPolicy -Identity "BlockExternal-Policy" `
+-WacEditingEnabled $true `
+-PrintWithoutDownloadEnabled $true `
+-OneDriveAttachmentsEnabled $true `
+-ThirdPartyFileProvidersEnabled $false `
+-AdditionalStorageProvidersAvailable $true `
+-ClassicAttachmentsEnabled $true `
+-ReferenceAttachmentsEnabled $true `
+-SaveAttachmentsToCloudEnabled $true `
+-InternalSPMySiteHostURL "" `
+-ExternalSPMySiteHostURL "" `
+-ExternalImageProxyEnabled $true `
+-NpsSurveysEnabled $true `
+-MessagePreviewsDisabled $false `
+-PersonalAccountCalendarsEnabled $true `
+-TeamsnapCalendarsEnabled $true `
+-BookingsMailboxCreationEnabled $true `
+-BookingsMailboxDomain "" `
+-ProjectMocaEnabled $false `
+-DirectFileAccessOnPublicComputersEnabled $true `
+-DirectFileAccessOnPrivateComputersEnabled $true `
+-WebReadyDocumentViewingOnPublicComputersEnabled $true `
+-WebReadyDocumentViewingOnPrivateComputersEnabled $true `
+-ForceWebReadyDocumentViewingFirstOnPublicComputers $false `
+-ForceWebReadyDocumentViewingFirstOnPrivateComputers $false `
+-WacViewingOnPublicComputersEnabled $true `
+-WacViewingOnPrivateComputersEnabled $true `
+-ForceWacViewingFirstOnPublicComputers $false `
+-ForceWacViewingFirstOnPrivateComputers $false `
+-ActionForUnknownFileAndMIMETypes Allow `
+-WebReadyFileTypes ".xlsx", ".pptx", ".docx", ".xls", ".rtf", ".ppt", ".pps", ".pdf", ".dot", ".doc" `
+-WebReadyMimeTypes "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-powerpoint", "application/x-mspowerpoint", "application/vnd.ms-excel", "application/x-msexcel", "application/msword", "application/pdf" `
+-WebReadyDocumentViewingForAllSupportedTypes $true `
+-WebReadyDocumentViewingSupportedMimeTypes "application/msword", "application/vnd.ms-excel", "application/x-msexcel", "application/vnd.ms-powerpoint", "application/x-mspowerpoint", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.presentationml.presentation" `
+-WebReadyDocumentViewingSupportedFileTypes ".doc", ".dot", ".rtf", ".xls", ".ppt", ".pps", ".pdf", ".docx", ".xlsx", ".pptx" `
+-AllowedFileTypes ".rpmsg", ".xlsx", ".xlsm", ".xlsb", ".tiff", ".pptx", ".pptm", ".ppsx", ".ppsm", ".docx", ".docm", ".zip", ".xls", ".wmv", ".wma", ".wav", ".vsd", ".txt", ".tif", ".rtf", ".pub", ".ppt", ".png", ".pdf", ".one", ".mp3", ".jpg", ".gif", ".doc", ".bmp", ".avi" `
+-AllowedMimeTypes "image/jpeg", "image/png", "image/gif", "image/bmp" `
+-ForceSaveFileTypes ".vsmacros", ".ps2xml", ".ps1xml", ".mshxml", ".gadget", ".psc2", ".psc1", ".html", ".aspx", ".wsh", ".wsf", ".wsc", ".vsw", ".vst", ".vss", ".vbs", ".vbe", ".url", ".tmp", ".swf", ".spl", ".shs", ".shb", ".sct", ".scr", ".scf", ".reg", ".pst", ".ps2", ".ps1", ".prg", ".prf", ".plg", ".pif", ".pcd", ".ops", ".mst", ".msp", ".msi", ".msh", ".msc", ".mdz", ".mdw", ".mdt", ".mde", ".mdb", ".mda", ".maw", ".mav", ".mau", ".mat", ".mas", ".mar", ".maq", ".mam", ".mag", ".maf", ".mad", ".lnk", ".ksh", ".jse", ".its", ".isp", ".ins", ".inf", ".htm", ".hta", ".hlp", ".fxp", ".exe", ".dir", ".dcr", ".csh", ".crt", ".cpl", ".com", ".cmd", ".chm", ".cer", ".bat", ".bas", ".asx", ".asp", ".app", ".adp", ".ade", ".ws", ".vb", ".js" `
+-ForceSaveMimeTypes "Application/x-shockwave-flash", "Application/octet-stream", "Application/futuresplash", "Application/x-director", "text/html" `
+-BlockedFileTypes ".settingcontent-ms", ".printerexport", ".appcontent-ms", ".application", ".appref-ms", ".vsmacros", ".website", ".msh2xml", ".msh1xml", ".diagcab", ".webpnp", ".ps2xml", ".ps1xml", ".mshxml", ".gadget", ".theme", ".psdm1", ".mhtml", ".cdxml", ".xbap", ".vhdx", ".pyzw", ".pssc", ".psd1", ".psc2", ".psc1", ".msh2", ".msh1", ".jnlp", ".aspx", ".appx", ".xnk", ".xll", ".wsh", ".wsf", ".wsc", ".wsb", ".vsw", ".vst", ".vss", ".vhd", ".vbs", ".vbp", ".vbe", ".url", ".udl", ".tmp", ".shs", ".shb", ".sct", ".scr", ".scf", ".reg", ".pyz", ".pyw", ".pyo", ".pyc", ".pst", ".ps2", ".ps1", ".prg", ".prf", ".plg", ".pif", ".pcd", ".ops", ".msu", ".mst", ".msp", ".msi", ".msh", ".msc", ".mht", ".mdz", ".mdw", ".mdt", ".mde", ".mdb", ".mda", ".mcf", ".maw", ".mav", ".mau", ".mat", ".mas", ".mar", ".maq", ".mam", ".mag", ".maf", ".mad", ".lnk", ".ksh", ".jse", ".jar", ".its", ".isp", ".iso", ".ins", ".inf", ".img", ".htc", ".hta", ".hpj", ".hlp", ".grp", ".fxp", ".exe", ".der", ".csh", ".crt", ".cpl", ".com", ".cnt", ".cmd", ".chm", ".cer", ".cab", ".bgi", ".bat", ".bas", ".asx", ".asp", ".app", ".apk", ".adp", ".ade", ".ws", ".vb", ".py", ".pl", ".js" `
+-BlockedMimeTypes "application/x-javascript", "application/javascript", "application/msaccess", "x-internet-signup", "text/javascript", "application/prg", "application/hta", "text/scriplet" `
+-FeedbackEnabled $true `
+-SMimeSuppressNameChecksEnabled $false `
+-EmptyStateEnabled $true `
+-BizBarEnabled $true `
+-AccountTransferEnabled $true `
+-OfflineEnabledWeb $true `
+-OfflineEnabledWin $true `
+-OneWinNativeOutlookEnabled $false `
+-PersonalAccountsEnabled $false `
+-AdditionalAccountsEnabled $false `
+-ChangeSettingsAccountEnabled $false `
+-ItemsToOtherAccountsEnabled $false `
+-AllowedOrganizationAccountDomains "" `
+-HideClassicOutlookToggleOut $false `
+-OutlookDataFile Allow `
+-PhoneticSupportEnabled $false `
+-DefaultTheme "" `
+-IsDefault $true `
+-DefaultClientLanguage 0 `
+-LogonAndErrorLanguage 0 `
+-UseGB18030 $false `
+-UseISO885915 $false `
+-OutboundCharset AutoDetect `
+-GlobalAddressListEnabled $true `
+-OrganizationEnabled $true `
+-ExplicitLogonEnabled $true `
+-OWALightEnabled $true `
+-DelegateAccessEnabled $true `
+-IRMEnabled $true `
+-CalendarEnabled $true `
+-ContactsEnabled $true `
+-TasksEnabled $true `
+-JournalEnabled $true `
+-NotesEnabled $true `
+-OnSendAddinsEnabled $false `
+-RemindersAndNotificationsEnabled $true `
+-PremiumClientEnabled $true `
+-SpellCheckerEnabled $true `
+-SearchFoldersEnabled $true `
+-SignaturesEnabled $true `
+-ThemeSelectionEnabled $true `
+-JunkEmailEnabled $true `
+-UMIntegrationEnabled $false `
+-WSSAccessOnPublicComputersEnabled $false `
+-WSSAccessOnPrivateComputersEnabled $false `
+-ChangePasswordEnabled $false `
+-UNCAccessOnPublicComputersEnabled $false `
+-UNCAccessOnPrivateComputersEnabled $false `
+-ActiveSyncIntegrationEnabled $true `
+-AllAddressListsEnabled $true `
+-RulesEnabled $true `
+-PublicFoldersEnabled $true `
+-SMimeEnabled $false `
+-RecoverDeletedItems-InstantMessagingEnabled $true
+-TextMessagingEnabled $false
+-ForceSaveAttachmentFilteringEnabled $false
+-SilverlightEnabled $true
+-InstantMessagingType Ocs
+-DisplayPhotosEnabled $true
+-SetPhotoEnabled $true
+-AllowOfflineOn AllComputers
+-SetPhotoURL 
+-PlacesEnabled $true
+-WeatherEnabled $true
+-LocalEventsEnabled $false
+-InterestingCalendarsEnabled $true
+-AllowCopyContactsToDeviceAddressBook $false
+-PredictedActionsEnabled $false
+-UserDiagnosticEnabled $false
+-FacebookEnabled $true
+-LinkedInEnabled $false
+-WacExternalServicesEnabled $true
+-WacOMEXEnabled $false
+-ReportJunkEmailEnabled $true
+-GroupCreationEnabled $false
+-SkipCreateUnifiedGroupCustomSharepointClassification $true
+-WebPartsFrameOptionsType SameOrigin
+-UserVoiceEnabled $true
+-SatisfactionEnabled $true
+-FreCardsEnabled $true
+-ConditionalAccessPolicy Off
+-ConditionalAccessFeatures
+-OutlookBetaToggleEnabled $true
+-ShowOnlineArchiveEnabled $true
+-OutlookNewslettersAccessLevel Undefined
+-OutlookNewslettersReactions Undefined
+-OutlookNewslettersShowMore Undefined
+-AdminDisplayName
